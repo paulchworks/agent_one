@@ -1,5 +1,7 @@
 # Agent One Crew
-![image](https://github.com/user-attachments/assets/c032ad39-c125-4374-a603-324c88e53e8b)
+![image](https://github.com/user-attachments/assets/c2de62f5-ebe4-4bda-a6cb-815cd6679a74)
+
+![image](https://github.com/user-attachments/assets/42365b7e-095d-41b2-bed3-789c9bda00e2)
 
 Welcome to the AgentOne Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities. 
 
