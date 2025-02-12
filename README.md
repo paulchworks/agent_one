@@ -71,7 +71,8 @@ Dynamic Year Input : Automatically injects the current year into the crew's inpu
 
 ## Usage
 Running the Application
-To start the Flask server, execute the following command:
+
+- To start the Flask server, execute the following command:
 
 python app.py
 
