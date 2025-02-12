@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f6f8;
+    background-color: #e8f4e9;
     color: #333;
     line-height: 1.6;
     display: flex;
@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-    background: #fff;
+    background: #ffffff;
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -24,31 +24,32 @@ body {
     max-width: 800px;
     text-align: center;
     margin: 0 auto;
+    border: 2px solid #c8e6c9;
 }
 
 h1 {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
-    color: #2c3e50;
+    color: #1b5e20;
 }
 
 input[type="text"] {
     width: 100%;
     padding: 0.75rem;
     margin-bottom: 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid #a5d6a7;
     border-radius: 5px;
     font-size: 1rem;
     transition: border-color 0.3s ease;
 }
 
 input[type="text"]:focus {
-    border-color: #3498db;
+    border-color: #43a047;
     outline: none;
 }
 
 button {
-    background-color: #3498db;
+    background-color: #4caf50;
     color: white;
     border: none;
     padding: 0.75rem 1.5rem;
@@ -59,7 +60,7 @@ button {
 }
 
 button:hover {
-    background-color: #2980b9;
+    background-color: #388e3c;
 }
 
 .result {
@@ -72,7 +73,7 @@ button:hover {
 
 .result h2 {
     font-size: 1.5rem;
-    color: #2c3e50;
+    color: #1b5e20;
     margin-top: 1.5rem;
     margin-bottom: 0.75rem;
 }
@@ -86,11 +87,9 @@ button:hover {
     .container {
         width: 90%;
     }
-
     h1 {
         font-size: 1.5rem;
     }
-
     input[type="text"], button {
         font-size: 0.9rem;
     }
