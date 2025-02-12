@@ -1,11 +1,13 @@
 import sys
+import os
 import warnings
-
 from datetime import datetime
 
-#from agent_one.src.agent_one.crew import AgentOne
+# Add the parent directory to sys.path to import the crew
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
-warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
+# Import the crew
+from agent_one.src.agent_one.crew import AgentOne
 
 from flask import Flask, request, jsonify, render_template
 
@@ -24,11 +26,13 @@ def run(topic):
     }
     
     try:
+
         # Kickoff the crew with the provided inputs
-        #result = AgentOne().crew().kickoff(inputs=inputs)
-        
+        result = AgentOne().crew().kickoff(inputs=inputs)
+
         # Simulate the result of running the crew
-        result = f"Crew executed successfully for topic: {topic}"
+        #result = f"Crew executed successfully for topic: {topic}"
+
         return result
     except Exception as e:
         raise Exception(f"An error occurred while running the crew: {e}")
