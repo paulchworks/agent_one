@@ -1,7 +1,9 @@
 # Agent One Crew
 ![image](https://github.com/user-attachments/assets/c032ad39-c125-4374-a603-324c88e53e8b)
 
-Welcome to the AgentOne Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+Welcome to the AgentOne Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities. 
+
+AgentOne Crew Runner is a lightweight Flask-based web application that allows you to run an AI agent (referred to as "crew") by providing a topic via an HTTP POST request. The backend logic leverages the AgentOne class from the agent_one module, which processes the input and generates an output.
 
 ## Installation
 
@@ -44,12 +46,35 @@ This example, unmodified, will run the create a `report.md` file with the output
 
 The agent-one Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
 
-## Support
+## Features
+HTTP API : Exposes an endpoint /run to trigger the execution of the crew.
+Frontend : Provides a basic HTML frontend for user interaction.
+Error Handling : Gracefully handles errors and returns appropriate error messages.
+Dynamic Year Input : Automatically injects the current year into the crew's input parameters.
 
-For support, questions, or feedback regarding the AgentOne Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
+## Prerequisites
+Before running the application, ensure you have the following installed:
 
-Let's create wonders together with the power and simplicity of crewAI.
+- Python 3.10 or higher
+- Pip (Python package manager)
+- Flask (pip install flask)
+- Other dependencies listed in requirements.txt
+
+##Installation
+
+Clone this repository:
+- git clone
+- cd agent_one
+- Install the required dependencies:
+- pip install -r requirements.txt
+- Ensure the agent_one module is correctly set up in the parent directory or adjust the import path accordingly.
+
+## Usage
+Running the Application
+To start the Flask server, execute the following command:
+
+python app.py
+By default, the application will run on http://0.0.0.0:5000.
+
+## Accessing the Frontend
+Navigate to http://localhost:5000 in your browser to access the frontend interface.
