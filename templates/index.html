@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgentOne Crew Runner</title>
+    <title>Agent One Crew Runner</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
     <div class="container">
-        <h1>Run AgentOne Crew</h1>
+        <h1>Run Agent One Research Crew</h1>
+        <p>Enter a topic to get started and we will provide a comprehensive report the current trends.</p>
+        <br><br>
         <input type="text" id="topicInput" placeholder="Enter a topic">
         <button onclick="submitTopic()">Run</button>
         <div class="result" id="result"></div>
