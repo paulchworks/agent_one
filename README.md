@@ -5,7 +5,21 @@ Welcome to the AgentOne Crew project, powered by [crewAI](https://crewai.com). T
 
 AgentOne Crew Runner is a lightweight Flask-based web application that allows you to run an AI agent (referred to as "crew") by providing a topic via an HTTP POST request. The backend logic leverages the AgentOne class from the agent_one module, which processes the input and generates an output.
 
+## Prerequisites
+Before running the application, ensure you have the following installed:
+
+- Python 3.10 or higher
+- Pip (Python package manager)
+- Flask (pip install flask)
+- Other dependencies listed in requirements.txt
+
 ## Installation
+Clone this repository:
+- git clone
+- cd agent_one
+- Install the required dependencies:
+- pip install -r requirements.txt
+- Ensure the agent_one module is correctly set up in the parent directory or adjust the import path accordingly.
 
 Ensure you have Python >=3.10 <3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
 
@@ -51,23 +65,6 @@ HTTP API : Exposes an endpoint /run to trigger the execution of the crew.
 Frontend : Provides a basic HTML frontend for user interaction.
 Error Handling : Gracefully handles errors and returns appropriate error messages.
 Dynamic Year Input : Automatically injects the current year into the crew's input parameters.
-
-## Prerequisites
-Before running the application, ensure you have the following installed:
-
-- Python 3.10 or higher
-- Pip (Python package manager)
-- Flask (pip install flask)
-- Other dependencies listed in requirements.txt
-
-##Installation
-
-Clone this repository:
-- git clone
-- cd agent_one
-- Install the required dependencies:
-- pip install -r requirements.txt
-- Ensure the agent_one module is correctly set up in the parent directory or adjust the import path accordingly.
 
 ## Usage
 Running the Application
