@@ -71,6 +71,7 @@ Running the Application
 To start the Flask server, execute the following command:
 
 python app.py
+
 By default, the application will run on http://0.0.0.0:5000.
 
 ## Accessing the Frontend
