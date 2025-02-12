@@ -26,16 +26,13 @@ def run(topic):
     }
     
     try:
-
         # Kickoff the crew with the provided inputs
-        result = AgentOne().crew().kickoff(inputs=inputs)
-
-        # Simulate the result of running the crew
-        #result = f"Crew executed successfully for topic: {topic}"
-
-        return result
+        output = AgentOne().crew().kickoff(inputs=inputs)
+        
+        # Return the output
+        return str(output)
     except Exception as e:
-        raise Exception(f"An error occurred while running the crew: {e}")
+        raise Exception(f"An error occurred while running the crew: {str(e)}")
 
 @app.route('/run', methods=['POST'])
 def handle_run():
