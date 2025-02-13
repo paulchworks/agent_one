@@ -41,6 +41,8 @@ stages:
         python -m venv antenv
         source antenv/bin/activate
         python -m pip install --upgrade pip
+        pip install flask
+        pip install crewai crewai-tools
         crewai install
       workingDirectory: $(projectRoot)
       displayName: "Install requirements"
