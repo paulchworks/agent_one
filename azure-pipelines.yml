@@ -53,10 +53,10 @@ stages:
         rootFolderOrFile: '$(projectRoot)'
         includeRootFolder: false
         archiveType: zip
-        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip src/ templates/ static/
         replaceExistingArchive: true
 
-    - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+    - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip src/ templates/ static/
       displayName: 'Upload package'
       artifact: drop
 
@@ -87,4 +87,4 @@ stages:
               appName: $(webAppName)
               package: $(Pipeline.Workspace)/drop/$(Build.BuildId).zip
               runtimeStack: 'PYTHON|3.10'
-              startUpCommand: 'python app.py'
+              startUpCommand: '. antenv/bin/activate && python app.py'
