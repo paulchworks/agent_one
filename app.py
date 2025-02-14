@@ -2,6 +2,7 @@ import sys
 import os
 import warnings
 from datetime import datetime
+from pysqlite3 import dbapi2 as sqlite3
 
 # Add the parent directory to sys.path to import the crew
 #sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
