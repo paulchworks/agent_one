@@ -65,6 +65,6 @@ stages:
         ConnectionType: 'AzureRM'
         azureSubscription: 'Default Subscription (0f21e802-aeff-4e83-977e-a5bde15f65c1)'
         appType: 'webAppLinux'
-        WebAppName: 'agent-one'
+        WebAppName: 'MyPythonAppdaa520'
         packageForLinux: '$(Pipeline.Workspace)/app.zip'
         RuntimeStack: 'PYTHON|3.10'
