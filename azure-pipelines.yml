@@ -67,4 +67,4 @@ stages:
         appName: 'agent-one'
         package: '$(Pipeline.Workspace)/app.zip'
         runtimeStack: 'PYTHON|3.10'
-        startUpCommand: 'python app.py'
+        startUpCommand: '. antenv/bin/activate && python app.py'
