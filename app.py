@@ -4,10 +4,11 @@ import warnings
 from datetime import datetime
 
 # Add the parent directory to sys.path to import the crew
-sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+#sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
 # Import the crew
-from agent_one.src.agent_one.crew import AgentOne
+#from agent_one.src.agent_one.crew import AgentOne
+from src.agent_one.crew import AgentOne
 
 from flask import Flask, request, jsonify, render_template
 
