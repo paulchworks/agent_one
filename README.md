@@ -59,6 +59,36 @@ This command initializes the agent-one Crew, assembling the agents and assigning
 
 This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
 
+## CI/CD Pipeline Overview
+The pipeline is divided into two main stages: Build and Deploy . It automates the process of building, packaging, and deploying a Python application using Azure DevOps.
+
+### 1. Build Stage
+Trigger : The pipeline is triggered whenever changes are pushed to the main branch.
+Environment : Runs on an ubuntu-latest virtual machine.
+Steps :
+Fetch Secrets : Retrieves sensitive information (e.g., OpenAI API key) from Azure Key Vault for secure usage.
+Build Process :
+Sets up a Python virtual environment and installs dependencies listed in requirements.txt.
+Installs additional tools like crewai.
+Generate .env File : Creates a .env file with environment variables (e.g., model name and API key).
+Package Application : Zips the application files (source code, static files, templates, etc.) into a deployment package (app.zip) stored in the build artifacts directory.
+Verify Package : Lists the contents of the ZIP file and the working directory to ensure correctness.
+Publish Artifact : Publishes the app.zip file as a pipeline artifact for use in the deployment stage.
+
+### 2. Deploy Stage
+Dependency : Executes after the Build stage completes successfully.
+Steps :
+Download Artifact : Downloads the app.zip file published in the Build stage.
+Verify Downloaded Files : Lists the contents of the downloaded ZIP file and workspace directory to confirm integrity.
+Deploy to Azure App Service :
+Deploys the application to an Azure Linux-based Web App using the AzureRmWebAppDeployment task.
+Configures the runtime stack as Python 3.10 and specifies the startup command for running the application with Gunicorn.
+Key Features
+Secret Management : Securely retrieves secrets (e.g., API keys) from Azure Key Vault.
+Environment Configuration : Dynamically generates a .env file with required environment variables.
+Automated Packaging : Creates a deployment-ready ZIP file containing all necessary application files.
+Seamless Deployment : Automates the deployment process to Azure App Service, ensuring the application is up and running with minimal manual intervention.
+
 ## Understanding Your Crew
 
 The agent-one Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
