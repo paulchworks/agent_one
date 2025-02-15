@@ -8,6 +8,9 @@ __import__('pysqlite3')
 import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
+import logging
+logging.basicConfig(level=logging.INFO)
+
 # Add the parent directory to sys.path to import the crew
 #sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
 
