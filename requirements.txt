@@ -3,3 +3,4 @@ Flask-Cors
 crewai
 crewai-tools
 pysqlite3-binary
+gunicorn
