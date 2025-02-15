@@ -11,6 +11,14 @@ stages:
   - job: BuildJob
     displayName: 'Build and Package Application'
     steps:
+    # Fetch secrets from Azure Key Vault
+    - task: AzureKeyVault@2
+      inputs:
+        azureSubscription: 'Default Subscription (0f21e802-aeff-4e83-977e-a5bde15f65c1)'
+        KeyVaultName: 'agentic7441751515'
+        SecretsFilter: 'openai-api-key'
+        RunAsPreJob: true
+  
     - script: echo Building the application...
       displayName: 'Start Build Process'
 
