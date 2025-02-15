@@ -25,6 +25,7 @@ stages:
         echo Creating .env file...
         echo "MODEL=gpt-4o-mini" > .env
         echo "OPENAI_API_KEY=$(openai-api-key)" >> .env
+        echo "OPENAI_API_KEY=$(openai-api-key)" 
       displayName: 'Generate .env File'
       env:
         MODEL: gpt-4o-mini
