@@ -1,6 +1,8 @@
 import os
 import warnings
 from datetime import datetime
+DATA_DIR = os.path.join(os.getenv('HOME', '/home'), 'data')
+os.makedirs(DATA_DIR, exist_ok=True)
 
 __import__('pysqlite3')
 import sys
