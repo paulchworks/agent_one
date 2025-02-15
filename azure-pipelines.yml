@@ -23,11 +23,12 @@ stages:
 
     - script: |
         echo Creating .env file...
-        echo "OPENAI_API_KEY=$(API_KEY)" >> .env
-        echo "MODEL= gpt-4o-mini" >> .env
+        echo "MODEL= gpt-4o-mini" > .env
+        echo "OPENAI_API_KEY=$(openai-api-key)" >> .env
       displayName: 'Generate .env File'
       env:
-        API_KEY: $(openai-api-key) # Secret from Key Vault
+        MODEL : gpt-4o-mini
+        OPENAI_API_KEY : $(openai-api-key) # Secret from Key Vault
 
     - script: ls -R .
       displayName: 'List Working Directory Contents'
