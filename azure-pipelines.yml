@@ -23,7 +23,7 @@ stages:
 
     - script: |
         echo Creating .env file...
-        echo "OPEN_API_KEY=$(API_KEY)" >> .env
+        echo "OPENAI_API_KEY=$(API_KEY)" >> .env
         echo "MODEL= gpt-4o-mini" >> .env
       displayName: 'Generate .env File'
       env:
