@@ -27,14 +27,14 @@ stages:
         echo "MODEL= gpt-4o-mini" >> .env
       displayName: 'Generate .env File'
       env:
-        API_KEY: $(openai-api-key)            # Secret from Key Vault
+        API_KEY: $(openai-api-key) # Secret from Key Vault
 
     - script: ls -R .
       displayName: 'List Working Directory Contents'
 
     - script: |
         echo Creating deployment package...
-        zip -r $(Build.ArtifactStagingDirectory)/app.zip src/ static/ templates/ knowledge/ requirements.txt app.py
+        zip -r $(Build.ArtifactStagingDirectory)/app.zip src/ static/ templates/ knowledge/ requirements.txt app.py .env/
       displayName: 'Package Application'
 
     - script: unzip -l $(Build.ArtifactStagingDirectory)/app.zip
