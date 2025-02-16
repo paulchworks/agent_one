@@ -4,6 +4,8 @@ import sys
 import logging
 from datetime import datetime
 from flask import Flask, request, jsonify, render_template
+# Import the crew
+from src.agent_one.crew import AgentOne
 
 DATA_DIR = os.path.join(os.getenv('HOME', '/home'), 'data')
 os.makedirs(DATA_DIR, exist_ok=True)
@@ -12,10 +14,6 @@ __import__('pysqlite3')
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 logging.basicConfig(level=logging.INFO)
-
-# Import the crew
-from src.agent_one.crew import AgentOne
-
 warnings.filterwarnings("ignore", category=SyntaxWarning, module="pysbd")
 
 # Initialize Flask app
