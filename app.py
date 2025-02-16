@@ -1,21 +1,17 @@
 import os
 import warnings
+import sys
+import logging
 from datetime import datetime
 DATA_DIR = os.path.join(os.getenv('HOME', '/home'), 'data')
 os.makedirs(DATA_DIR, exist_ok=True)
 
 __import__('pysqlite3')
-import sys
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
-import logging
 logging.basicConfig(level=logging.INFO)
 
-# Add the parent directory to sys.path to import the crew
-#sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-
 # Import the crew
-#from agent_one.src.agent_one.crew import AgentOne
 from src.agent_one.crew import AgentOne
 
 from flask import Flask, request, jsonify, render_template
