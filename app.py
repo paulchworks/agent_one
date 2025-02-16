@@ -1,4 +1,5 @@
 import warnings
+import os
 import sys
 import logging
 from datetime import datetime
@@ -8,7 +9,6 @@ DATA_DIR = os.path.join(os.getenv('HOME', '/home'), 'data')
 os.makedirs(DATA_DIR, exist_ok=True)
 
 __import__('pysqlite3')
-import os
 sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 # Import the crew
