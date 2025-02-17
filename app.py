@@ -8,8 +8,8 @@ from flask import Flask, request, jsonify, render_template
 DATA_DIR = os.path.join(os.getenv('HOME', '/home'), 'data')
 os.makedirs(DATA_DIR, exist_ok=True)
 
-__import__('pysqlite3')
-sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+#__import__('pysqlite3')
+#sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
 
 # Import the crew
 from src.agent_one.crew import AgentOne
