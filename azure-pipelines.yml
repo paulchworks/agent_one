@@ -85,5 +85,5 @@ stages:
         WebAppName: 'MyPythonAppdaa520'
         packageForLinux: '$(Pipeline.Workspace)/app.zip'
         RuntimeStack: 'PYTHON|3.10'
-        startupCommand: 'gunicorn --bind 0.0.0.0:$PORT app:app'
+        startupCommand: 'gunicorn --bind 0.0.0.0:$PORT -w 2 --threads 4 app:app'
     
