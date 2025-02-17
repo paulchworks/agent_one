@@ -5,11 +5,14 @@ import logging
 from datetime import datetime
 from flask import Flask, request, jsonify, render_template
 
+#from dotenv import load_dotenv # Import the load_dotenv function from the dotenv module when running locally
+#load_dotenv() # Load environment variables from the .env file when running locally 
+
 DATA_DIR = os.path.join(os.getenv('HOME', '/home'), 'data')
 os.makedirs(DATA_DIR, exist_ok=True)
 
-#__import__('pysqlite3')
-#sys.modules['sqlite3'] = sys.modules.pop('pysqlite3')
+__import__('pysqlite3') # Import the pysqlite3 module during deployment
+sys.modules['sqlite3'] = sys.modules.pop('pysqlite3') # Replace the sqlite3 module with pysqlite3 during deployment
 
 # Import the crew
 from src.agent_one.crew import AgentOne
